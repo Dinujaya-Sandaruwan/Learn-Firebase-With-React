@@ -33,20 +33,19 @@ Firebase is a platform provided by Google that offers a suite of tools and servi
 To get started with this project, follow these steps:
 
 1. Clone the repository to your local machine:
-git clone https://github.com/Dinujaya-Sandaruwan/Learn-Firebase-With-React.git
+   git clone https://github.com/Dinujaya-Sandaruwan/Learn-Firebase-With-React.git
 
 2. Navigate to the project directory:
-```cd Learn-Firebase-With-React```
-
+   `cd Learn-Firebase-With-React`
 
 3. Install the dependencies using npm:
-```npm install```
+   `npm install`
 
 4. Create a Firebase project and obtain the Firebase configuration details including the Firebase API Key, Auth Domain, Project ID, Storage Bucket, and Messaging Sender ID.
 
 5. Update the Firebase configuration details in the `.env` file located at the root of the project:
 
-``` JavaScript
+```JavaScript
 VITE_API_KEY=<YOUR_API_KEY>
 VITE_AUTH_DOMAIN=<YOUR_AUTH_DOMAIN>
 VITE_PROJECT_ID=<YOUR_PROJECT_ID>
@@ -55,8 +54,7 @@ VITE_MESSAGING_SENDER_ID=<YOUR_MESSAGING_SENDER_ID>
 ```
 
 6. Start the development server:
-```npm run dev```
-
+   `npm run dev`
 
 This will start the development server and open the application in your default web browser.
 
@@ -76,25 +74,26 @@ const email = "example@example.com";
 const password = "password";
 
 createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // User sign-up successful
-    const user = userCredential.user;
-    console.log("User ID:", user.uid);
-  })
-  .catch((error) => {
-    // User sign-up failed
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    console.error("Error:", errorCode, errorMessage);
-  });
+	.then((userCredential) => {
+		// User sign-up successful
+		const user = userCredential.user;
+		console.log("User ID:", user.uid);
+	})
+	.catch((error) => {
+		// User sign-up failed
+		const errorCode = error.code;
+		const errorMessage = error.message;
+		console.error("Error:", errorCode, errorMessage);
+	});
 ```
 
 ## Firestore CRUD Operations
+
 Firestore is a real-time NoSQL database provided by Firebase that allows you to store, sync, and query data for your applications. This repository includes examples of how to perform CRUD (Create, Read, Update, Delete) operations with Firestore in your React applications.
 
 Here's an example of how to perform a Firestore CRUD operation to create a document:
 
-``` JavaScript
+```JavaScript
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 
 // ...
@@ -119,7 +118,7 @@ Firestore Rules are used to define the access rules for your Firestore database.
 
 Here's an example of how to define a Firestore Rule for read access to a collection:
 
-``` JavaScript
+```JavaScript
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
@@ -137,7 +136,7 @@ Firebase Storage allows you to upload and retrieve files such as images, videos,
 
 Here's an example of how to upload an image to Firebase Storage:
 
-``` JavaScript
+```JavaScript
 
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
@@ -168,6 +167,7 @@ uploadBytes(storageRef, file)
   });
 
 ```
+
 ## Firebase Hosting and Deployment
 
 Firebase Hosting allows you to deploy and serve your web applications with a custom domain. This repository includes examples of how to deploy your React applications to Firebase Hosting using the Firebase CLI.
@@ -176,39 +176,44 @@ Here's an example of how to deploy your React application to Firebase Hosting:
 
 1 Install the Firebase CLI globally:
 
-``` bash
+```bash
 npm install -g firebase-tools
 ```
 
 2. Authenticate with your Firebase account:
-``` bash
+
+```bash
 firebase login
 ```
+
 3. Initialize your Firebase project in the project directory:
-``` bash
+
+```bash
 firebase init
 ```
+
 4. Select "Hosting" as the Firebase CLI feature to configure.
 
 5. Choose your Firebase project and configure your hosting settings.
 
 6. Build your React application for production:
 
-``` bash
+```bash
 npm run build
 ```
 
 7. Deploy your application to Firebase Hosting:
 
-``` bash
+```bash
 firebase deploy --only hosting
 ```
 
 8. Firebase will provide you with a Firebase Hosting URL where your application is deployed and can be accessed.
 
-
 ## Contributing
+
 If you would like to contribute to this project, feel free to open an issue or submit a pull request. All contributions are welcome!
 
-License
+## License
+
 This project is open-source and available under the MIT License.
